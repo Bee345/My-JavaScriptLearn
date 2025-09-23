@@ -160,7 +160,22 @@
   }
 }
 @layer utilities {
+  .mx-auto {
+    margin-inline: auto;
+  }
+  .h-\[20vh\] {
+    height: 20vh;
+  }
+  .w-\[80\%\] {
+    width: 80%;
+  }
+  .justify-center {
+    justify-content: center;
+  }
   .bg-amber-400 {
     background-color: var(--color-amber-400);
+  }
+  .text-center {
+    text-align: center;
   }
 }
