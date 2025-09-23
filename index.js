@@ -19,7 +19,7 @@ function cookEgg(cookEgg, callback){
         const checked = {work: cookEgg, qty:5};
         callback(checked);
     }, 5000)
-}
+};
 
 console.log("Well I Just Started Cooking the Eggs!!")
 cookEgg(true, (checked) => { 
