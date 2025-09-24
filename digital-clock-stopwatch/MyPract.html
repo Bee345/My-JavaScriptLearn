@@ -10,5 +10,50 @@
 </head>
 <body>
     <h1>Here Bellow Are My Javascript Projects</h1>
+    <div class="app"> 
+        <div class="card" id="clockCard"> 
+            <h2 id="caption">🕒 My Digital Clock</h2>
+        <div class="class-display" id="clockDisplay">--:--:--</div>
+        <div class="sub" id="clockSub">Local Time</div>
+        <div class="muted-footer-note">Uses Your System Time via <code>()</code>.</div>
+        </div>
+    
+
+    <!-- DE STOPWATCH -->
+     <div class="card" id="stopwatchCard"> 
+        <h2>🕒 Stopwatch</h2>
+        <div class="stopwatch-display" id="stopwatchDisplay">00:00:000</div>
+        <div class="sub">Precision: milliseconds</div>
+
+        <div class="controls" style="margin-bottom: 8px;"> 
+            <button id="swStartBtn" class="primary">Start</button>
+            <button id="swStopBtn" class="ghost small" disabled>Stop</button>
+            <button id="swResetBtn" class="ghost small" disabled>Reset</button>
+            <button id="swLapBtn" class="ghost small" disabled>Lap</button>
+        </div>
+
+        <div class="laps" id="lapsContainer" aria-live="polite"> 
+            <!-- Laps Been Injected Here -->
+        </div>
+
+        <div class="footer-note">Laps Persist Only During This Session (not Saved).</div>
+     </div>
+
+<!-- COUNTDOWN -->
+ <div class="card" id="countdownDisplay" style="grid-column: span 2;"> 
+    <h2>⏳ Countdown Timer</h2>
+    <div class="countdown-display" id="countdownDisplay">00:00:000</div>
+    <div class="sub">Set Minutes & Seconds, then Start. Alerts When Finished.</div>
+
+    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+        <div style="flex: 1;">
+       <label for="cdMinutes">Minutes</label>
+       <input type="number" id="cdMinutes" min="0" value="0"/>
+        </div>
+        <!--I Stopped After The Minutes -->
+    </div>
+ </div>
+    
+    </div>
 </body>
 </html>
