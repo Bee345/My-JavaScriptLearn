@@ -22,7 +22,7 @@
     <!-- DE STOPWATCH -->
      <div class="card" id="stopwatchCard"> 
         <h2>🕒 Stopwatch</h2>
-        <div class="stopwatch-display" id="stopwatchDisplay">00:00:000</div>
+        <div class="stopwatch-display" id="stopwatchDisplay">00:00:00</div>
         <!-- <div class="sub">Precision: milliseconds</div> -->
 
         <div class="controls" style="margin-bottom: 8px;"> 
@@ -41,24 +41,19 @@
      </div>
 
 <!-- COUNTDOWN -->
- <div class="card" id="countdownDisplay" style="grid-column: span 2;"> 
+<div class="card" style="grid-column: span 2;">
     <h2>⏳ Countdown Timer</h2>
-    <div class="countdown-display" id="countdownDisplay">00:00:000</div>
-    <!-- <div class="sub">Set Minutes & Seconds, then Start. Alerts When Finished.</div> -->
-
+    <div class="countdown-display" id="countdownDisplay">00:00:00</div>
     <div class="controls">
-       <input type="number" id="cdMinutes" min="0" value="0"/>Min
-       <input type="number"  id="cdSeconds" min="0" max="59" value="30">Sec
+        <input type="number" id="cdMinutes" min="0" oninput="if(this.value < 0) this.value = ''" placeholder="Minutes">
+<input type="number" id="cdSeconds" min="0" oninput="if(this.value < 0) this.value = ''" placeholder="Seconds">
     </div>
-
-        <div class="controls">
-            <button id="cdStartBtn" class="positive">Start</button>
-            <button id="cdPauseBtm" class="ghost small" disabled>Pause</button>
-            <button id="cdResetBtn" class="ghost small" disabled>Reset</button>
-        </div>
-
-        <!-- <div class="footer-note">when countdown finishes a browser</div> -->
- </div>
+    <div class="controls">
+        <button id="cdStartBtn" class="positive">Start</button>
+        <button id="cdPauseBtn" class="ghost small">Pause</button>
+        <button id="cdResetBtn" class="ghost small">Reset</button>
+    </div>
+</div>
     </div>
 
     <script type="module" src="main.js"></script>

@@ -27,14 +27,15 @@ body{
 
 .app{ 
     display: grid;
-    grid-template-columns: 360px 360px;
+    grid-template-columns: 360px 360px 360px;
     gap: 18px;
     max-width: 760px;
+    height: 80vh;
     width: 100%;
 }
 
 .card{ 
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.082), rgba(255, 255, 255, 0.01));
     border-radius: var(--radius);
     padding: 18px;
     box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
@@ -69,6 +70,15 @@ h2{
   flex-wrap: wrap;
 }
 
+
+.countdown-display {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 34px;
+    letter-spacing: 0.6px;
+    color: #f7fbff;
+    margin-bottom: 12px;
+}
 button{ 
     border: var(--glass);
     border: 1px solid rgba(255, 255, 255, 0.04);
