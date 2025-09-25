@@ -11,6 +11,7 @@
 <body>
     <h1>Here Bellow Are My Javascript Projects</h1>
     <div class="app"> 
+        <!-- CLOCK -->
         <div class="card" id="clockCard"> 
             <h2 id="caption">🕒 My Digital Clock</h2>
         <div class="class-display" id="clockDisplay">--:--:--</div>
@@ -18,12 +19,11 @@
         <div class="muted-footer-note">Uses Your System Time via <code>()</code>.</div>
         </div>
     
-
     <!-- DE STOPWATCH -->
      <div class="card" id="stopwatchCard"> 
         <h2>🕒 Stopwatch</h2>
         <div class="stopwatch-display" id="stopwatchDisplay">00:00:000</div>
-        <div class="sub">Precision: milliseconds</div>
+        <!-- <div class="sub">Precision: milliseconds</div> -->
 
         <div class="controls" style="margin-bottom: 8px;"> 
             <button id="swStartBtn" class="primary">Start</button>
@@ -34,26 +34,33 @@
 
         <div class="laps" id="lapsContainer" aria-live="polite"> 
             <!-- Laps Been Injected Here -->
+             <p class="footer-note">Keyboard: Space = Start/Stop, L = Lap, R = Reset</p>
         </div>
 
-        <div class="footer-note">Laps Persist Only During This Session (not Saved).</div>
+        <!-- <div class="footer-note">Laps Persist Only During This Session (not Saved).</div> -->
      </div>
 
 <!-- COUNTDOWN -->
  <div class="card" id="countdownDisplay" style="grid-column: span 2;"> 
     <h2>⏳ Countdown Timer</h2>
     <div class="countdown-display" id="countdownDisplay">00:00:000</div>
-    <div class="sub">Set Minutes & Seconds, then Start. Alerts When Finished.</div>
+    <!-- <div class="sub">Set Minutes & Seconds, then Start. Alerts When Finished.</div> -->
 
-    <div style="display: flex; gap: 8px; margin-bottom: 8px;">
-        <div style="flex: 1;">
-       <label for="cdMinutes">Minutes</label>
-       <input type="number" id="cdMinutes" min="0" value="0"/>
+    <div class="controls">
+       <input type="number" id="cdMinutes" min="0" value="0"/>Min
+       <input type="number"  id="cdSeconds" min="0" max="59" value="30">Sec
+    </div>
+
+        <div class="controls">
+            <button id="cdStartBtn" class="positive">Start</button>
+            <button id="cdPauseBtm" class="ghost small" disabled>Pause</button>
+            <button id="cdResetBtn" class="ghost small" disabled>Reset</button>
         </div>
-        <!--I Stopped After The Minutes -->
-    </div>
+
+        <!-- <div class="footer-note">when countdown finishes a browser</div> -->
  </div>
-    
     </div>
+
+    <script type="module" src="main.js"></script>
 </body>
 </html>
