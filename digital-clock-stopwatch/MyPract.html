@@ -41,19 +41,45 @@
      </div>
 
 <!-- COUNTDOWN -->
-<div class="card" style="grid-column: span 2;">
-    <h2>⏳ Countdown Timer</h2>
-    <div class="countdown-display" id="countdownDisplay">00:00:00</div>
-    <div class="controls">
-        <input type="number" id="cdMinutes" min="0" oninput="if(this.value < 0) this.value = ''" placeholder="Minutes">
-<input type="number" id="cdSeconds" min="0" oninput="if(this.value < 0) this.value = ''" placeholder="Seconds">
-    </div>
-    <div class="controls">
-        <button id="cdStartBtn" class="positive">Start</button>
-        <button id="cdPauseBtn" class="ghost small">Pause</button>
-        <button id="cdResetBtn" class="ghost small">Reset</button>
-    </div>
+<div class="card" style="grid-column: span 2;" id="countdownCard">
+  <h2>⏳ Countdown Timer</h2>
+
+  <div class="countdown-display" id="countdownDisplay" aria-live="polite">00:00:00</div>
+
+  <div class="controls">
+    <label>
+      Hours
+      <input type="number" id="cdHours" min="0" step="1" inputmode="numeric" placeholder="Hours">
+    </label>
+    <label>
+      Minutes
+      <input type="number" id="cdMinutes" min="0" step="1" inputmode="numeric" placeholder="Minutes">
+    </label>
+    <label>
+      Seconds
+      <input type="number" id="cdSeconds" min="0" step="1" inputmode="numeric" placeholder="Seconds">
+    </label>
+  </div>
+
+  <div class="controls">
+    <button id="cdStartBtn" class="positive">Start</button>
+    <button id="cdPauseBtn" class="ghost small" disabled>Pause</button>
+    <button id="cdStopBtn" class="ghost small" disabled>Stop</button>
+    <button id="cdResetBtn" class="ghost small" disabled>Reset</button>
+  </div>
+
+  <!-- Alarm controls (only visible when alarm is ringing) -->
+  <div class="alarm-controls" id="alarmControls" style="display:none; margin-top:1rem;">
+    <p id="trackInfo">🎵 Now playing: <span id="trackTitle">alarm.mp3</span></p>
+    <button id="cdAlarmStopBtn" class="negative">Stop Alarm</button>
+    <button id="cdAlarmSnoozeBtn" class="positive">Snooze (10 min)</button>
+    <button id="cdAlarmSnooze20Btn" class="positive">Snooze (20 min)</button>
+  </div>
+
+  <!-- Audio element (can be replaced with your own track) -->
+  <audio id="cdAlarm" src="Meek_Mill_-_Early_Mornings_medianub.com.ng.mp3" preload="auto"></audio>
 </div>
+
     </div>
 
     <script type="module" src="main.js"></script>
