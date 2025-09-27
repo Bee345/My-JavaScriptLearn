@@ -7,6 +7,40 @@
     <link rel="stylesheet" href="todo.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="header">
+            <h2>📋 My To Do List</h2>
+
+            <button id="themeToggle">🌙 Dark Mode</button>
+        </div>
+
+        <form action="" id="taskForm"> 
+            <input type="text" id="taskInput" placeholder="Enter A New Task...." required>
+            <input type="date"  id="taskDate"/>
+            <select  id="taskCategory"> 
+                <option value="General">General</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Study">Study</option>
+                <option value="Career">Career</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <table id="taskTable">
+    <thead>
+       <tr>
+         <th>No:</th>
+        <th>Task</th>
+        <th>Category</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+       </tr>
+    </thead>
+    <tbody id="taskBody"></tbody>
+        </table>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
