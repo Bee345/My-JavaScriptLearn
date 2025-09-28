@@ -9,7 +9,7 @@
 
 body.dark{ 
     --bg: #181818;
-    --text: #333;
+    --text: #fff;   /* too dark for dark mode */;
     --card: #242424;
     --thead-bg: #388e3c;
     --thead-text: #f5f5f5;
@@ -138,4 +138,38 @@ button.action{
 
 .action.complete:hover{ 
     background: #da190b;
+}
+
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none; /* hide header on mobile */
+  }
+
+  tbody tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background: var(--card);
+  }
+
+  tbody td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: capitalize;
+    color: var(--thead-bg);
+  }
 }

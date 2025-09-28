@@ -27,19 +27,20 @@ function renderTasks() {
     tasks.forEach((task, index) => { 
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${task.text}</td>
-            <td>${task.category}</td>
-            <td>${task.date || "-"}</td>
-            <td class="status ${task.completed ? "done" : "pending"}">
-                ${task.completed ? "Achieved" : "Pending"}
-            </td>
-            <td>
-                <button class="action complete" data-index="${index}">
-                    ${task.completed ? "Undo" : "Complete"}
-                </button>
-                <button class="action delete" data-index="${index}">Delete</button>
-            </td>`;
+    <td data-label="No.">${index + 1}</td>
+    <td data-label="Task">${task.text}</td>
+    <td data-label="Category">${task.category}</td>
+    <td data-label="Due Date">${task.date || "-"}</td>
+    <td data-label="Status" class="status ${task.completed ? "done" : "pending"}">
+        ${task.completed ? "Achieved" : "Pending"}
+    </td>
+    <td data-label="Actions">
+        <button class="action complete" data-index="${index}">
+            ${task.completed ? "Undo" : "Complete"}
+        </button>
+        <button class="action delete" data-index="${index}">Delete</button>
+    </td>`;
+;
         taskBody.appendChild(row);
     });
 }
@@ -50,10 +51,10 @@ function renderTasks() {
 form.addEventListener("submit", e =>{ 
     e.preventDefault();
     const newTask = { 
-        task: taskInput.ariaValueMax,
-        category: taskCategory.ariaValueMax,
-        date: taskDate.ariaValueMax,
-        completed: false
+        text: taskInput.value,
+        category: taskCategory.value,
+        date: taskDate.value,
+        completed: false,
     };
     tasks.push(newTask);
     taskInput.value = "";
