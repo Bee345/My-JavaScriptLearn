@@ -29,8 +29,37 @@ const copyBtn = document.getElementById("copyQuote");
 const tweetBtn = document.getElementById("tweetQuote");
 const toggleThemeBtn = document.getElementById("toggleTheme")
 
-// Function To Generate A Random Quote
+// Function To Generate A Random Quote either From the Local Quotes Or From the API
+async function getRandomQuote(){ 
+    try { 
+        const res = await fetch("https://api.api-ninjas.com/v1/quotes", {
+            headers:{
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    // 👇 sometimes helpful
+    "Access-Control-Allow-Origin": "*",  // but server must respect this
+    "X-Api-Key" :"8gWgUThDTUbss9Q+65+vUQ==EleNngL9lZFmk6gE"
+            }
+        });
+        console.log(res);
+        if (!res.ok) throw new Error("API Error -- Unable To Get Quotes");
 
+        const data = await res.json();
+        // Parse the contents string into an array
+        const parsed = JSON.parse(data.contents);
+        const quote = parsed[0]; // ZenQuotes returns an array of 1 object
+
+        quoteEl.textContent = `"${quote.q}"`;
+        authorEl.textContent = `— ${quote.a}`;
+    } catch(error) { 
+        console.error("Quote API failed:", error);
+        // Fallback To Local Array
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const randomQuote = quotes[randomIndex];
+        quoteEl.textContent = `"${randomQuote.text}"`;
+        authorEl.textContent = `— ${randomQuote.author}`;
+    }
+}
 
 // For New Quote Generation
 newQuoteBtn.addEventListener("click", getRandomQuote);
@@ -42,3 +71,37 @@ copyBtn.addEventListener("click", () => {
     alert("Quote Copied To Clipboard!");
 });
 
+// For Tweeting the Quotes
+tweetBtn.addEventListener("click", () => { 
+    const tweetText = `${quoteEl.textContent} ${authorEl.textContent}`;
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+    window.open(twitterUrl, "_blank");
+});
+
+// For the Dark Mode Of My Project
+function setTheme(dark){ 
+    if(dark){ 
+       document.body.classList.add("dark");
+       toggleThemeBtn.textContent = "☀️ Light Mode";
+       localStorage.setItem("theme", "light");
+    } else { 
+        document.body.classList.remove("dark");
+        toggleThemeBtn.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+toggleThemeBtn.addEventListener("click", () => { 
+    const isDark = document.body.classList.contains("dark");
+    setTheme(!isDark);
+})
+
+// Load Saved theme
+if(localStorage.getItem("theme") === "dark"){ 
+    setTheme(true);
+} else{ 
+    setTheme(false);
+}
+
+// Load First Quote.
+getRandomQuote();
