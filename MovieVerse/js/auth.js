@@ -1,0 +1,1 @@
+// Handles SignUp/ LogIn With LocalStorage.

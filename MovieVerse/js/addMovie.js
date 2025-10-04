@@ -1,0 +1,1 @@
+// Handles DOM rendering Of Movies.
