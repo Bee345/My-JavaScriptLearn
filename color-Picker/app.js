@@ -55,6 +55,9 @@ copyBtn.addEventListener("click", () => {
     document.body.style.background = "";
     colorCode.textContent = "#ffffff";
 });
+resetBtn.addEventListener("click", () => { 
+    document.body.style.background = "#ffffff";
+});
 
 // Initialize With The Last Saved Color
 if(history.length > 0){ 
