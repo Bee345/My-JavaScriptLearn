@@ -1,0 +1,128 @@
+/* Well Am Styling the Header Component */
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 2em; */
+    position: fixed;
+    background-color: #a33;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+}
+.logo{ 
+    /* border: 2px solid white; */
+    margin: 4px 10px;
+    padding: 5px 6px;
+}
+.logo h2 {
+    margin: 0;
+    font-size: 2.5em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.navBar{
+    /* width: 80; */
+    /* height: 14vh; */
+    /* background: #a33;  */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.navLinks{
+    /* width: 80%; */
+    /* position: relative;  */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+.navLinks a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.6em;
+    /* margin: 0 1.5em; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.themeToggle{ 
+    cursor: pointer;
+    font-size: 1.5em;
+    /* border: 2px solid white; */
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000;
+}
+/* This Below Is the At Media For the Header for all screen sizes */
+@media screen and (min-width: 320px) and (max-width: 770px) {
+    .navBar{ 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #a33;
+        /* border: 2px solid white; */
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 40%;
+        
+    }
+    .navLinks{ 
+        flex-direction: column;
+        gap: 2em;
+        margin-top: 5em;
+    }
+}
+
+/* This Below Is the At Media For Larger Screens (Desktops & Big Displays) */
+@media screen and (min-width: 771px) {
+    header {
+        width: 100%;
+        height: 80px;
+        padding:10px;
+        justify-content: center;
+        /* gap: ; */
+    }
+
+    .logo {
+        /* width: 30%; */
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .logo h2 {
+        font-size: 2em;
+    }
+.navBar{
+    /* width: 80%;
+    height: 14vh; */
+    /* background: #a33;  */
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    /* border: 2px solid white; */
+    padding: 20px;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+    .navLinks {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        margin-top: 0;
+    }
+
+    .navLinks a {
+        font-size: 1.5em;
+        /* margin: 0 1em; */
+    }
+}
