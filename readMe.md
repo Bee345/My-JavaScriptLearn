@@ -12,3 +12,9 @@ WEATHER-APP{AI-Helped}(Well Still Gat little Issues To fix with it)
 MOVIE-VERSE-APP{AI-Helped}(Currently Working On It) -->
 Well As I Go I will Keep Working On It and Improving i Know That and i also Think That Too
 And I forgot I Also learnt about GIT/ GITHUB & GITHUB-DESKTOP I am Already Making use of Git-Desktop I Am Still Trying to master and understand how to make use OF GitHub. I Am Tracking all my progress with git commiting all my changes haven't created or merged any branch at all
+
+<!-- Now talking about VAR, LET & CONST
+So VAR: Dates Back to the 1995 used for declaring javascript variables not until 2015 was let and const introduced to the world of javascript.
+ CONST: It can't be re-assigned and is block scoped unlike var which is function scoped.
+LET: It is also block scoped and can be reassigned.
+ -->
