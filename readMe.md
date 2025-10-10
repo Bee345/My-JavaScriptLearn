@@ -18,3 +18,5 @@ So VAR: Dates Back to the 1995 used for declaring javascript variables not until
  CONST: It can't be re-assigned and is block scoped unlike var which is function scoped.
 LET: It is also block scoped and can be reassigned.
  -->
+
+ JavaScript HAs What We Call Implicit Type Conversion:: Now This is A sinerio where Javascript helps you in conversion and hndling of strings and numbers especially in a case where u want to concatenate a string and an integer, now using the + sign will do a string concatenation whereas using other signs will do an integer Maths Work
