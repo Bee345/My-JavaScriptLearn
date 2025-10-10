@@ -26,3 +26,26 @@ cookEgg(true, (checked) => {
     console.log("Eggs are Cooked: " + checked.work + " And The Quantity is: " + checked.qty);
 });
 console.log("Doing Other Stuff While The Eggs are Cooking!!");
+
+// const randomNum = 15;
+// document.querySelector(".form").addEventListener("submit", (e) => { 
+//   e.preventDefault();
+//   let userNum = document.getElementById("amount").value;
+//   userNum = parseInt(userNum);
+//   console.log("This Is The Output");
+//   console.log(userNum);
+//   console.log("See what The Addition will Look like");
+//   console.log(randomNum + userNum);
+// });
+
+const random = 50;
+document.querySelector(".form").addEventListener("submit", (e) => { 
+  e.preventDefault();
+  let value = document.getElementById("amount").value;
+  value = parseInt(value);
+  const output = document.querySelector(".show");
+  if(typeof(value) === "number" && typeof(random) === "number"){
+    const total = value + random; 
+    output.innerHTML += `The Addition of ${value} and ${random} is: ${value} + ${random} which will give us ${total}, And This Can Be Wrong IF You Miss The Logic`;
+  }
+})
