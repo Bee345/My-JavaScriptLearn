@@ -9,6 +9,8 @@
       "Courier New", monospace;
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-blue-500: oklch(62.3% 0.214 259.815);
+    --color-rose-200: oklch(89.2% 0.058 10.001);
+    --radius-2xl: 1rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -203,6 +205,9 @@
   .block {
     display: block;
   }
+  .contents {
+    display: contents;
+  }
   .flex {
     display: flex;
   }
@@ -245,6 +250,9 @@
   .justify-center {
     justify-content: center;
   }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -262,6 +270,9 @@
   }
   .bg-amber-400 {
     background-color: var(--color-amber-400);
+  }
+  .bg-rose-200 {
+    background-color: var(--color-rose-200);
   }
   .text-center {
     text-align: center;

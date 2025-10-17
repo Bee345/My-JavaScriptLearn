@@ -26,6 +26,7 @@ cookEgg(true, (checked) => {
     console.log("Eggs are Cooked: " + checked.work + " And The Quantity is: " + checked.qty);
 });
 console.log("Doing Other Stuff While The Eggs are Cooking!!");
+
 // This is the First Code I wrote for the Addition Of 2 numbers 
 // const randomNum = 15;
 // document.querySelector(".form").addEventListener("submit", (e) => { 
@@ -110,7 +111,7 @@ const storee = document.querySelector(".display");
 function renderResults(){ 
   const results = localStorage.getItem("results") ? JSON.parse(localStorage.getItem("results")) : [];
   // storee.innerHTML = "";
-  storee.innerHTML = results.map( item => `<p>${item}</p>`).join("");
+  storee.innerHTML = results.map( item => `<p class="obi">${item}</p>`).join("");
   // results.forEach((item) => { 
   //   const p = document.createElement("p");
   //   p.textContent = item;
@@ -145,11 +146,17 @@ formm.addEventListener("submit", (e) => {
 
     // Save Back To LocalStorage
     localStorage.setItem("results", JSON.stringify(results));
-
-    // Refresh Display
-    // renderResults(); 
+ 
   } else{ 
     outputt.textContent = "Please Enter A Valid Number";
   }
   formm.reset();
 });
+
+
+let see = document.getElementById("check");
+function hello(name, age, school){ 
+  return ` Hello ${name} You Are ${age} Years Old And You Attend ${school}, Well Nice To Meet u!`;
+};
+
+see.innerHTML += hello("John", 20, "University of Lagos");

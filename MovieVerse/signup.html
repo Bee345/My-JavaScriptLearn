@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | MovieVerse</title>
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <h1 class="logo">🎥 MovieVerse</h1>
+            <h2>Create Your Account</h2>
+
+            <form id="signupForm"> 
+                <div class="input-group">
+                    <label for="fName">First Name:</label>
+                    <input type="text" id="fName" placeholder="Enter Your First Name Here" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="mName">Middle Name:</label>
+                    <input type="text" id="mName" placeholder="Enter Your Middle Name Here" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="lName">Last Name:</label>
+                    <input type="text" id="lName" placeholder="Enter Your Last Name Here" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email"  id="email" placeholder="Enter Your Email Here" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" placeholder="Choose a username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password"  id="password" placeholder="Create a Password" required>
+                </div>
+
+                <button type="submit" class="btn primary">Sign Up</button>
+            </form>
+
+            <p class="switch">
+                Already have an Account? <a href="login.html">LogIn</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
