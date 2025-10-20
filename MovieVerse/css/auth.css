@@ -66,10 +66,11 @@ input::placeholder{
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 2s;
+    transition: background 5s;
 }
 .btn:hover{ 
-    background: #0ea5e9;
+    background: #062a3a;
+    color: chartreuse;
 }
 .switch{ 
     margin-top: 10px;
